@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.xlsx
+*REAL*
+*real*
+*.db
+data/*.csv
+!data/sample_anonimo.csv

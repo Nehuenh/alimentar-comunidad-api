@@ -1,0 +1,21 @@
+id,provincia,barrio_anonimo,tipo_comedor,capacidad_viandas,voluntarios,ratio,estado
+1,Buenos Aires,Barrio 42,Comedor,150,5,30,activo
+2,CABA,Barrio 07,Merendero,200,8,25,activo
+3,Buenos Aires,Barrio 91,Comedor,5000,2,2500,inconsistente
+4,Cordoba,Barrio 15,Comedor,120,4,30,activo
+5,Santa Fe,Barrio 33,Merendero,80,3,26,activo
+6,Buenos Aires,Barrio 42,Comedor,150,5,30,duplicado
+7,Tucuman,Barrio 58,Comedor,300,10,30,activo
+8,Mendoza,Barrio 12,Merendero,90,3,30,activo
+9,Buenos Aires,Barrio 22,Comedor,250,6,41,activo
+10,CABA,Barrio 07,Merendero,200,8,25,duplicado
+11,Chaco,Barrio 81,Comedor,180,6,30,activo
+12,Buenos Aires,Barrio 05,Comedor,170,5,34,activo
+13,Salta,Barrio 63,Merendero,110,4,27,activo
+14,Entre Rios,Barrio 29,Comedor,140,5,28,activo
+15,Buenos Aires,Barrio 77,Comedor,130,4,32,activo
+16,Corrientes,Barrio 44,Merendero,95,3,31,activo
+17,Buenos Aires,Barrio 10,Comedor,160,5,32,activo
+18,Jujuy,Barrio 51,Comedor,210,7,30,activo
+19,Misiones,Barrio 36,Merendero,85,3,28,activo
+20,Buenos Aires,Barrio 88,Comedor,190,6,31,activo
