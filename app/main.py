@@ -5,6 +5,9 @@ import os
 from app.database import SessionLocal, engine, get_db
 from app import models
 
+from pydantic import BaseModel, field_validator, model_validator
+from typing import Optional
+
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Alimentar Comunidad API - Nehuen Herrero")
@@ -54,3 +57,38 @@ def soft_delete(id: int, db: Session = Depends(get_db)):
     comedor.activo = False
     db.commit()
     return {"mensaje": f"Comedor {id} desactivado (soft delete)", "trazabilidad": "preservada como en RENACOM"}
+
+
+
+class ComedorCreate(BaseModel):
+    provincia: str
+    barrio_anonimo: str
+    tipo_comedor: str = "Comunitario"
+    capacidad_viandas: int
+    voluntarios: int
+    direccion: Optional[str] = None # campo extra para compatibilidad, no se guarda
+
+
+    @model_validator(mode='after')
+    def validar_ratio(self):
+        if self.voluntarios > 0 and self.capacidad_viandas / self.voluntarios > 1000:
+            raise ValueError('Ratio viandas/voluntarios > 1000 inconsistente - validacion RENACOM')
+        return self
+
+@app.post("/comedores", status_code=201)
+def crear_comedor(comedor: ComedorCreate, db: Session = Depends(get_db)):
+    ratio = comedor.capacidad_viandas // max(comedor.voluntarios, 1)
+    nuevo = models.Comedor(
+        provincia=comedor.provincia,
+        barrio_anonimo=comedor.barrio_anonimo,
+        tipo_comedor=comedor.tipo_comedor,
+        capacidad_viandas=comedor.capacidad_viandas,
+        voluntarios=comedor.voluntarios,
+        ratio=ratio,
+        estado="activo",
+        activo=True
+    )
+    db.add(nuevo)
+    db.commit()
+    db.refresh(nuevo)
+    return nuevo
