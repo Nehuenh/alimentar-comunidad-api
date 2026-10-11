@@ -2,7 +2,7 @@
 
 API REST para gestión de comedores comunitarios - inspirado en trabajo real RENACOM.
 
-**Autor:** Nehuen Herrero (Est. Sistemas - 40k registros RENACOM gestionados)
+**Autor:** Nehuen Herrero (Est. Lic. Física - 40k registros RENACOM gestionados)
 
 ### Stack
 - Python + FastAPI + SQLAlchemy + SQLite + Pandas
