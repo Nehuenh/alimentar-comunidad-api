@@ -1,4 +1,4 @@
-# Alimentar Comunidad API
+# 🍲 API Alimentar Comunidad
 
 API REST para gestión de comedores comunitarios - inspirado en trabajo real RENACOM.
 
@@ -6,8 +6,11 @@ API REST para gestión de comedores comunitarios - inspirado en trabajo real REN
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688)
 ![Tests](https://img.shields.io/badge/tests-4%20passed-brightgreen)
 
-**Autor:** Nehuen Herrero (Est. Lic. Física - 40k registros RENACOM gestionados)
+**🚀 Demo en vivo:** https://alimentar-comunidad-api.onrender.com
+**📖 Documentación Swagger:** https://alimentar-comunidad-api.onrender.com/docs
+**🔗 Endpoint principal:** https://alimentar-comunidad-api.onrender.com/comedores
 
+**Autor:** Nehuen Herrero (Est. Lic. Física - 40k registros RENACOM gestionados)
 **Repo:** https://github.com/Nehuenh/alimentar-comunidad-api
 
 ### Stack
@@ -23,7 +26,7 @@ API REST para gestión de comedores comunitarios - inspirado en trabajo real REN
 - `POST /comedores` - crea con validación de ratio
 - `DELETE /comedores/{id}` - soft delete
 
-### Correr
+### Correr local
 ```bash
 python -m venv venv
 venv\Scripts\activate
